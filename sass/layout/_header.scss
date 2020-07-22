@@ -1,0 +1,281 @@
+
+/*
+    ===============================================================
+    Header
+    ===============================================================
+*/
+
+.navbar {
+    @media (max-width: $screen-sm-max) {
+      height: 47px;
+      left: 0;
+      top: 0;
+      position: fixed;
+      padding: 0;
+      width: 100%;
+      z-index: 9999;
+      background-color: $white;
+    }
+  }
+  
+  .navbar .container {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem auto;
+    .brand {
+        display: flex;
+        margin-left: 1rem;
+        .brand-logo img {
+            max-width: 60px;
+            height: auto;
+        }
+        .navbar-brand {
+          font-family: "Open Sans";
+          font-weight: 300;
+          font-size: 2.1rem;
+          letter-spacing: 0.5px;
+          color: $black;
+          margin-right: 0;
+          padding: 0.7rem 1rem 0;
+        }
+        @media (max-width: $screen-sm-max) {
+          margin-left: 0.7rem;
+          .brand-logo a {
+            position: relative;
+            img {
+              position: absolute;
+              top: 50%;
+              transform: translateY(17%);
+              max-width: 42px;
+            }
+          }
+          .navbar-brand {
+            padding: 0.2rem;
+            margin-left: 5rem;
+          }
+        }
+    }
+  
+    .navbar-collapse {
+      flex-grow: 0;
+      ul {
+        padding-left: 0;
+      }
+      ul li::before {
+        display: none;
+      }
+      ul li {
+          margin: 0 2rem;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+      }
+      a {
+        font-family: "Open Sans";
+        font-size: 1.3rem;
+        letter-spacing: 0.5px;
+        color: $black;
+        text-transform: uppercase;
+        @include transition(0.5s);
+        &:hover {
+          color: $grey;
+          @include transition(0.3s);
+        }
+      }
+    }
+  
+    @media (min-width: $screen-md-min) {
+        .navbar-collapse {
+            .menu-item {
+                position: relative;
+                color: $dark-grey-3;
+                a::after {
+                    background: none repeat scroll 0 0 transparent;
+                    bottom: 0;
+                    content: "";
+                    display: block;
+                    height: 1px;
+                    left: 50%;
+                    position: absolute;
+                    background: $dark-grey-1;
+                    width: 0;
+                    opacity: 0;
+                    @include transition(all 0.2s ease);
+                }
+                a:hover::after {
+                    width: 100%;
+                    left: 0;
+                    opacity: 1;
+                }
+                &:hover {
+                    a {
+                        color: $dark-grey-3;
+                    }
+                }
+            }
+            .current-menu-item {
+                border-bottom: 1px solid $dark-grey-1;
+                a:hover::after {
+                    width: 0;
+                }
+            }
+        }
+        .mobile-search {
+          margin-right: 0 !important;
+          margin-left: 2rem;
+          input {
+              font-size: 1.4rem;
+              width: 0;
+              padding: 0.5rem 1.2rem 0.5rem 3.6rem;
+              outline: none;
+              opacity: 0;
+              border: none;
+              border-radius: 0;
+              border-bottom: 1px solid transparent;
+              @include transition(all 0.3s ease-in);
+          }
+          &:hover input,
+          &:focus input,
+          & input:focus {
+                  width: 200px;
+                  outline: none;
+                  opacity: 1;
+                  border: none;
+                  border-radius: 0;
+                  border-bottom: 1px solid $dark-grey-1;
+                  @include transition(all 0.2s ease-in);
+          }
+          button {
+              color: $light-grey-1;
+              position: absolute;
+              left: 0;
+              top: 8px;
+              background-color: $white;
+              border: 0;
+              outline: none;
+              cursor: pointer;
+          }
+        }
+    }
+  
+    @media (max-width: $screen-sm-max) {
+      flex-direction: row;
+      margin: 0 0 2rem;
+      max-width: none;
+      // box-shadow: 0 2px 22px rgba(0, 0, 0, 0.10);
+      .navbar-brand {
+        margin: .5rem 2rem;
+        font-size: 2.5rem;
+        padding: 0;
+      }
+      .navbar-collapse {
+        margin: 0;
+        background-color: $white;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        min-height: 100vh;
+        position: relative;
+        ul {
+          position: absolute;
+          top: 12%;
+          width: 100%;
+        }
+        ul li {
+            text-align: center;
+            margin: 1.5rem 5rem;
+        }
+        ul li.mobile-search {
+          display: block;
+          margin-bottom: 3rem;
+          order: -1;
+        }
+        a {
+          font-size: 1.6rem;
+        }
+      }
+      .navbar-toggler {
+        margin: .5rem 1.4rem;
+        outline: none;
+        width: 30px;
+        height: 22px;
+        position: relative;
+        @include rotate(0deg);
+        @include transition(0.5s ease-in-out);
+        cursor: pointer;
+        // animation of the mobile-menu button
+        div {
+          display: block;
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          background: $dark-grey-1;
+          border-radius: 2px;
+          opacity: 1;
+          left: 0;
+          @include rotate(0deg);
+          @include transition(0.25s ease-in-out);
+        }
+        div:nth-child(1) {
+          top: 0px;
+        }
+        div:nth-child(2), div:nth-child(3) {
+          top: 8px;
+        }
+        div:nth-child(4) {
+          top: 16px;
+        }
+        &.open div:nth-child(1) {
+          top: 8px;
+          width: 0%;
+          left: 50%;
+        }
+        &.open div:nth-child(2) {
+          @include rotate(45deg);
+        }
+        &.open div:nth-child(3) {
+          @include rotate(-45deg);
+        }
+        &.open div:nth-child(4) {
+          top: 8px;
+          width: 0%;
+          left: 50%;
+        }
+      }
+    }
+  }
+  
+  // mobile menu animations
+  body {
+      @media (max-width: $screen-sm-max) {
+          .body-content {
+            @include opacity(1);
+            @include scale(1);
+            visibility: visible;
+            @include transition(all 0.2s ease-in);
+          }
+          .body-content.navigation {
+            @include opacity(0);
+            @include scale(0.9);
+            visibility: hidden;
+            @include transition(all 0.2s ease-in);
+          }
+      }
+  }
+  
+  @media (max-width: $screen-sm-max) {
+      .navbar-collapse {
+          @include opacity(0);
+          @include transition(all 0.1s ease-in);
+          &.show {
+              @include opacity(1);
+              @include transition(all 0.1s ease-in);
+          }
+          .current-menu-item {
+              border-bottom: none !important;
+              .nav-link {
+                  font-weight: bold;
+              }
+          }
+      }
+  }
+  

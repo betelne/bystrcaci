@@ -1,0 +1,124 @@
+
+/*
+    ===============================================================
+    Lidé
+    ===============================================================
+*/
+
+.people {
+    margin-top: 4rem;
+    .bystrcak {
+        display: flex;
+        margin: 6rem 0;
+        .picture {
+            margin-right: 4rem;
+            img {
+                object-fit: cover;
+                width: 15rem;
+                height: 15rem;
+                max-width: none;
+                border-radius: 50%;
+            }
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+            margin-top: 0.5rem;
+            width: 100%;
+            h2.name {
+                font: bold 2.1rem "Merriweather";
+                color: inherit;
+                margin: 0;
+            }
+            .party {
+                color: $grey;
+            }
+            .function {
+                margin-top: 1rem;
+            }
+            .contact {
+                margin-top: 1rem;
+                .email a,
+                .phone a {
+                    color: $grey;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                        color: $dark-grey-3;
+                    }
+                }
+                i.fas {
+                    color: $light-grey-1;
+                    margin-right: 1rem;
+                }
+            }
+            .person-about {
+                display: block;
+                margin-top: 2rem;
+                max-height: 200rem;
+                opacity: 1;
+                @include transition(all 0.3s ease);
+                &.closed {
+                    max-height: 0;
+                    margin-top: 0;
+                    opacity: 0;
+                    z-index: -1;
+                    @include transition(all 0.2s ease);
+                }
+            }
+        }
+        &:hover {
+            .person-about-btn {
+                opacity: 1;
+                @include transition(opacity 0.2s ease);
+            }
+        }
+        .person-about-btn {
+            position: relative;
+            font-size: 4rem;
+            color: $light-grey-3;
+            opacity: 0;
+            padding: 0 4rem;
+            cursor: pointer;
+            @include transition(opacity 0.3s ease);
+            i.fas {
+                position: absolute;
+                top: 6rem;
+                right: 2.8rem;
+                @include transition(all 0.2s ease);
+            }
+            &.open {
+                i.fas {
+                    @include rotate(180deg);
+                    @include transition(all 0.2s ease);
+                }
+            }
+        }
+    }
+    @media (max-width: $screen-md-max) {
+        .bystrcak {
+            flex-direction: column;
+            .picture {
+                margin: 0 auto;
+            }
+            .info {
+                text-align: center;
+                h2.name {
+                    margin-top: 2rem;
+                }
+            }
+            .person-about-btn {
+                display: flex;
+                justify-content: center;
+                opacity: 1;
+                position: relative;
+                border: none;
+                i.fas {
+                    position: relative;
+                    top: auto;
+                    right: auto;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,216 @@
+
+/*
+    ===============================================================
+    Typography
+    ===============================================================
+*/
+
+html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font: normal 1.6rem "Open Sans";
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  
+  .nowrap {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline;
+    min-width: 1px;
+  }
+  
+  header {
+    font-family: "Merriweather";
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 6rem;
+    margin: 4rem auto 8rem;
+    text-align: center;
+    color: $dark-grey-2;
+    @media (max-width: $screen-sm-max) {
+      font-size: 3rem;
+      line-height: 4rem;
+      margin: 1rem auto 5rem;
+    }
+  }
+  
+  .page-header {
+      font-family: "Merriweather";
+      font-size: 2.1rem;
+      font-weight: bold;
+      margin: 0 auto;
+  }
+  
+  .page-title {
+    margin-bottom: 2rem;
+  }
+  
+  .search-nothing {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  h1 {
+      font-family: "Merriweather";
+      font-size: 4rem;
+      font-weight: 700;
+  }
+  
+  h2 {
+      font-family: "Merriweather";
+      font-size: 2.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: $dark-grey-2;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+  }
+  
+  h3 {
+      font-family: "Merriweather";
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: $dark-grey-2;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+  }
+  
+  h4 {
+      font-family: "Merriweather";
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: $dark-grey-2;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+  }
+  
+  h5 {
+      font-family: "Merriweather";
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: $grey;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+  }
+  
+  h6 {
+      font-family: "Merriweather";
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: $grey;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+  }
+  
+  a {
+    color: $dark-grey-3;
+    @include transition(0.3s);
+  }
+  
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    color: inherit;
+    outline: 0;
+    @include transition(0.2s);
+  }
+  
+  // external links style
+  
+  // a[href*="//"]:not([href*="bystrcaci.cz"]):hover {
+  //     position: relative;
+  //     &::after {
+  //         content: "\f35d";
+  //         font-family: "Font Awesome 5 Free";
+  //         font-weight: 900;
+  //         position: absolute;
+  //     }
+  // }
+  
+  // pdf links style
+  
+  // a[href$=".pdf"] {
+  //     position: relative;
+  //     margin-right: 60px;
+  //     &:after {
+  //         content: "PDF";
+  //         position: absolute;
+  //         margin-left: 1rem;
+  //         padding: 2px 10px;
+  //         border-radius: 15px;
+  //         font-size: 1.2rem;
+  //         font-weight: bold;
+  //         color: $white;
+  //         background-color: #f04b32;
+  //     }
+  // }
+  
+  ol {
+    list-style: none;
+    counter-reset: li-counter;
+    margin-left: 0;
+    padding: 0 2.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  ol li {
+    counter-increment: li-counter;
+    position: relative;
+    margin-left: 2.3rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    &:before {
+      content: counter(li-counter);
+      color: $dark-grey-1;
+      position: absolute;
+      left: -18px;
+      top: -4px;
+      font-family: "Merriweather";
+      font-size: 2rem;
+      text-align: right;
+      width: 1em;
+      direction: rtl;
+      padding-right: 1.6rem;
+    }
+  }
+  
+  ul {
+    padding-left: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  ul li {
+    list-style: none;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: $dark-grey-1;
+      position: absolute;
+      left: -18px;
+      top: 11px;
+    }
+  }
+  
+  .highlight {
+      background-color: #FFFF9C;
+      @include transition(0.2s);
+      &:hover {
+          background-color: #FFFA00;
+          @include transition(0.3s);
+      }
+  }
+  

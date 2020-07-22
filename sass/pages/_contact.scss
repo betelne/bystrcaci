@@ -1,0 +1,107 @@
+
+/*
+    ===============================================================
+    Contact Page
+    ===============================================================
+*/
+
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    #contactForm {
+        margin-top: 1rem !important;
+        width: 70%;
+    }
+    .contact-info {
+        margin-top: 3.5rem;
+        width: 30%;
+        margin-left: 8rem;
+        h2.name {
+            font: bold 2.1rem "Merriweather";
+            margin: 0;
+        }
+        .contact {
+            margin: 1rem 0 4rem;
+        }
+        i.fas {
+            color: $light-grey-1;
+            margin-right: 1rem;
+        }
+    }
+    @media (max-width: $screen-md-max) {
+        flex-direction: column;
+        #contactForm,
+        .contact-info {
+            width: 100%;
+        }
+        .contact-info {
+            margin: 2rem auto 0;
+            text-align: center;
+            order: -1;
+        }
+    }
+}
+
+
+#contactForm {
+    margin-top: 4rem;
+    .form-group {
+        position: relative;
+        margin: 3rem auto;
+        label {
+            position: absolute;
+            left: 1.5rem;
+            top: 13px;
+            padding: 0 5px;
+            color: $grey;
+            cursor: text;
+            @include transition(all 0.3s);
+        }
+        .form-control {
+            padding: 1.2rem 1.9rem;
+            background-color: rgba(0, 0, 0, 0.02);
+            @include transition(all 0.3s);
+            &:focus {
+                outline: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                border-color: inherit;
+                background-color: rgba(0, 0, 0, 0);
+                @include transition(all 0.2s);
+            }
+        }
+        .form-control:focus,
+        .form-control.not-empty {
+            background-color: rgba(0, 0, 0, 0);
+            + label {
+                transform: translateY(-24px);
+                font-size: 1.3rem;
+                color: $light-grey-1;
+                background-color: rgba(255, 255, 255, 1);
+                padding: 0 5px;
+                @include transition(all 0.2s);
+            }
+        }
+    }
+    input,
+    textarea,
+    button {
+        font-size: inherit;
+        min-height: 5rem;
+    }
+    .data-policy {
+        color: $light-grey-1;
+        max-width: 24rem;
+        margin: 2rem auto 0;
+    }
+    .data-policy-hidden {
+        display: none;
+    }
+    .form-feedback-msg {
+        display: none;
+        margin-top: 1rem;
+    }
+    .js-show-feedback {
+        display: block;
+    }
+}
