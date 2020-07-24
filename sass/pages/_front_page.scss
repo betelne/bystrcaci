@@ -55,12 +55,13 @@
           padding: 3rem;
           color: $white;
           .date {
-              font-size: 1.4rem;
-              font-family: "Merriweather";
+              font-size: $font-small;
+              font-family: $serif;
               text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
           }
           h1 {
               font-size: 3.8rem;
+              color: inherit;
               padding: 1rem 0 0.5rem;
               text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
           }
@@ -129,14 +130,14 @@
           .post-info {
               margin-left: 2rem;
               .date {
-                  font-size: 1.4rem;
-                  font-family: "Merriweather";
+                  font-size: $font-small;
+                  font-family: $serif;
                   color: $light-grey-1;
               }
               a {
                   color: inherit;
                   h1 {
-                      font-size: 2.1rem;
+                      font-size: $h2;
                       line-height: 3rem;
                       margin: 1rem 0;
                   }

@@ -10,7 +10,7 @@ html {
   }
   
   body {
-    font: normal 1.6rem "Open Sans";
+    font: normal 1.6rem $sans-serif;
     line-height: 1.6;
     min-height: 100vh;
   }
@@ -24,24 +24,21 @@ html {
   }
   
   header {
-    font-family: "Merriweather";
-    font-size: 4rem;
-    font-weight: 700;
+    @extend %header;
+    font-size: $h1;
     line-height: 6rem;
     margin: 4rem auto 8rem;
     text-align: center;
-    color: $dark-grey-2;
     @media (max-width: $screen-sm-max) {
-      font-size: 3rem;
+      font-size: 3rem; // to solve - mobile font sizes
       line-height: 4rem;
       margin: 1rem auto 5rem;
     }
   }
   
   .page-header {
-      font-family: "Merriweather";
-      font-size: 2.1rem;
-      font-weight: bold;
+      @extend %header;
+      font-size: $h2;
       margin: 0 auto;
   }
   
@@ -55,44 +52,37 @@ html {
   }
   
   h1 {
-      font-family: "Merriweather";
-      font-size: 4rem;
-      font-weight: 700;
+      @extend %header;
+      font-size: $h1;
   }
   
   h2 {
-      font-family: "Merriweather";
-      font-size: 2.1rem;
-      font-weight: 700;
+      @extend %header;
+      font-size: $h2;
       line-height: 1.4;
-      color: $dark-grey-2;
       margin-top: 4rem;
       margin-bottom: 2rem;
   }
   
   h3 {
-      font-family: "Merriweather";
-      font-size: 1.8rem;
-      font-weight: 700;
+      @extend %header;
+      font-size: $h3;
       line-height: 1.4;
-      color: $dark-grey-2;
       margin-top: 3rem;
       margin-bottom: 1rem;
   }
   
   h4 {
-      font-family: "Merriweather";
-      font-size: 1.4rem;
-      font-weight: 700;
+      @extend %header;
+      font-size: $h4;
       line-height: 1.5;
-      color: $dark-grey-2;
       margin-top: 2rem;
       margin-bottom: 1rem;
   }
   
   h5 {
-      font-family: "Merriweather";
-      font-size: 1.4rem;
+      @extend %header;
+      font-size: $h5;
       font-weight: 400;
       line-height: 1.5;
       color: $grey;
@@ -101,8 +91,8 @@ html {
   }
   
   h6 {
-      font-family: "Merriweather";
-      font-size: 1.2rem;
+      @extend %header;
+      font-size: $h6;
       font-weight: 400;
       line-height: 1.5;
       color: $grey;
@@ -173,7 +163,7 @@ html {
       position: absolute;
       left: -18px;
       top: -4px;
-      font-family: "Merriweather";
+      font-family: $serif;
       font-size: 2rem;
       text-align: right;
       width: 1em;

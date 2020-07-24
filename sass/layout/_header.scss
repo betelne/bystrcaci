@@ -30,7 +30,7 @@
             height: auto;
         }
         .navbar-brand {
-          font-family: "Open Sans";
+          font-family: $sans-serif;
           font-weight: 300;
           font-size: 2.1rem;
           letter-spacing: 0.5px;
@@ -71,7 +71,7 @@
           flex-direction: column;
       }
       a {
-        font-family: "Open Sans";
+        font-family: $sans-serif;
         font-size: 1.3rem;
         letter-spacing: 0.5px;
         color: $black;
@@ -190,7 +190,7 @@
           order: -1;
         }
         a {
-          font-size: 1.6rem;
+          font-size: $font-base;
         }
       }
       .navbar-toggler {

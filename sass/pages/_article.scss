@@ -11,10 +11,9 @@
     margin: 4rem 8rem;
     line-height: 6rem;
     text-align: center;
-    color: $dark-grey-2;
     @media (max-width: $screen-sm-max) {
       margin: 1rem;
-      font-size: 3rem;
+      font-size: 3rem; // to solve - mobile font sizes
       line-height: 4rem;
       margin-bottom: 4rem !important;
     }
@@ -32,7 +31,7 @@
       }
     }
     .ccfic { // captions
-        font-size: 1.4rem;
+        font-size: $font-small;
         color: $light-grey-1;
         margin-top: -3.2rem;
         margin-bottom: 2.4rem;
@@ -61,11 +60,11 @@
           min-width: 12rem;
           .post-author {
               font-weight: bold;
-              font-size: 1.4rem;
+              font-size: $font-small;
           }
           .date {
-              font-size: 1.4rem;
-              font-family: "Merriweather";
+              font-size: $font-small;
+              font-family: $serif;
           }
       }
   }
@@ -140,7 +139,7 @@
           }
           .wp-caption-text {
               text-align: right;
-              font-size: 1.4rem;
+              font-size: $font-small;
               color: $light-grey-1;
               margin-top: 0.2rem;
           }
@@ -308,11 +307,9 @@
 .article-full {
     // initial letter style
     .text p:first-child::first-letter {
+        @extend %header;
         float: left;
-        color: #434343;
-        font-family: "Merriweather";
         font-size: 12rem;
-        font-weight: bold;
         line-height: 120px;
         // padding-top: 15px;
         padding-right: 25px;
@@ -324,11 +321,9 @@
 }
 
 p.has-drop-cap:first-letter {
+    @extend %header;
     float: left !important;
-    color: #434343 !important;
-    font-family: "Merriweather" !important;
     font-size: 12rem !important;
-    font-weight: bold !important;
     line-height: 120px !important;
     padding-right: 25px !important;
     margin: -3px 0 0 0 !important;
