@@ -10,8 +10,9 @@ html {
   }
   
   body {
-    font: normal 1.6rem $sans-serif;
-    line-height: 1.6;
+    font: normal $font-base $sans-serif;
+    color: $dark-grey-3;
+    line-height: 1.5;
     min-height: 100vh;
   }
   
@@ -30,7 +31,7 @@ html {
     margin: 4rem auto 8rem;
     text-align: center;
     @media (max-width: $screen-sm-max) {
-      font-size: 3rem; // to solve - mobile font sizes
+      font-size: $h1-sm;
       line-height: 4rem;
       margin: 1rem auto 5rem;
     }
@@ -60,15 +61,15 @@ html {
       @extend %header;
       font-size: $h2;
       line-height: 1.4;
-      margin-top: 4rem;
-      margin-bottom: 2rem;
+      margin-top: 4.5rem;
+      margin-bottom: 1.5rem;
   }
   
   h3 {
       @extend %header;
       font-size: $h3;
       line-height: 1.4;
-      margin-top: 3rem;
+      margin-top: 3.5rem;
       margin-bottom: 1rem;
   }
   
@@ -98,6 +99,10 @@ html {
       color: $grey;
       margin-top: 2rem;
       margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
   }
   
   a {

@@ -11,11 +11,20 @@
     margin: 4rem 8rem;
     line-height: 6rem;
     text-align: center;
+    @media (max-width: $screen-md-max) {
+        font-size: $h1-md;
+        line-height: 5.5rem;
+    }
     @media (max-width: $screen-sm-max) {
-      margin: 1rem;
-      font-size: 3rem; // to solve - mobile font sizes
-      line-height: 4rem;
-      margin-bottom: 4rem !important;
+        margin: 1rem;
+        font-size: $h1-sm;
+        line-height: 4rem;
+        margin-bottom: 4rem !important;
+    }
+  }
+  h2 {
+    @media (max-width: $screen-sm-max) {
+        font-size: $h2-sm;
     }
   }
 
@@ -27,7 +36,7 @@
       margin: 1rem 0 4rem;
       border-radius: 5px;
       @media (max-width: $screen-sm-max) {
-        max-height: 35rem;
+          max-height: 35rem;
       }
     }
     .ccfic { // captions
@@ -92,7 +101,7 @@
 
   .text {
       margin-top: 3rem;
-      line-height: 1.85;
+      line-height: 1.7;
       a {
           text-decoration: none;
           color: $link-color;
@@ -121,6 +130,7 @@
       .text-end {
           color: $light-grey-2;
           font-size: 3.2rem;
+          user-select: none;
           margin: 2rem auto;
       }
       @media (max-width: $screen-sm-max) {
