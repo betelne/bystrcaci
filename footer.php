@@ -16,7 +16,7 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/bystrcaci-logo-mono.png" alt="">
                         </div>
                         <p>
-                            <span class="mirror-horizontally">©</span> Bystrčáci, 2019. Všechna práva vyhlazena. </br>
+                            <span class="mirror-horizontally">©</span> Bystrčáci, <?php echo date('Y'); ?>. Všechna práva vyhlazena. </br>
                             Sdílejte a nechte ostatní sdílet za stejných podmínek.
                         </p>
                         <p><a href="/ochrana-osobnich-udaju">Zásady ochrany osobních údajů</a></p>

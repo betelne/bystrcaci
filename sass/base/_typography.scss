@@ -15,6 +15,19 @@ html {
     line-height: 1.5;
     min-height: 100vh;
   }
+
+  /* Sans Serif for article body text */
+  // .article-full p,
+  // .article-full ol,
+  // .article-full ul {
+  //   font: 300 $font-base $serif;
+  //   font-style: inherit;
+  //   line-height: 1.9;
+  //   letter-spacing: 0.01rem;
+  //   strong {
+  //     font-weight: 700;
+  //   }
+  // }
   
   .nowrap {
     overflow: hidden;
@@ -196,7 +209,7 @@ html {
       background-color: $dark-grey-1;
       position: absolute;
       left: -18px;
-      top: 11px;
+      top: 13px;
     }
   }
   

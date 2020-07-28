@@ -11,7 +11,8 @@ function Bystrcaci_enqueue() {
       wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
     }
     wp_enqueue_style( 'Open Sans', "https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700&display=swap&subset=latin-ext");
-    wp_enqueue_style( 'Merriweather', "https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap");
+    // wp_enqueue_style( 'Merriweather', "https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap");
+    wp_enqueue_style( 'Merriweather', "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap");
     wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css');
     wp_enqueue_script( 'bootstrapcdn', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array('jquery'), '', true );
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '', true );

@@ -2,7 +2,8 @@
 
   <div class="row">
 
-    <div class="col-xs-12 col-md-10 article-full">
+    <!-- Article full -->
+    <div class="col-md-10 article-full">
 
       <?php if ( have_posts() ) :
         while ( have_posts() ) : the_post(); ?>
@@ -45,52 +46,6 @@
                 </div>
             </div>
 
-            <!-- Related Posts -->
-                <?php
-                    $orig_post = $post;
-                    global $post;
-                    $tags = wp_get_post_tags($post->ID);
-
-                    if ($tags) {
-                        $tag_ids = array();
-                        foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
-                        $args = array(
-                            'tag__in' => $tag_ids,
-                            'post__not_in' => array($post->ID),
-                            'posts_per_page' => 4, // Number of related posts to display.
-                            'caller_get_posts' => 1
-                        );    
-
-                        $my_query = new wp_query( $args );
-
-                        if( $my_query->have_posts() ) { // Show only if there are related posts
-                ?>
-
-                    <h3>Související články</h3>
-                    <div class="related-posts">
-
-                        <?php
-                            while( $my_query->have_posts() ) {
-                                $my_query->the_post();
-                        ?>
-                        
-                            <div class="related-post col-sm-6 col-lg-3">
-                                <a href="<?php the_permalink()?>">
-                                    <?php the_post_thumbnail( 'medium-large' ); ?>
-                                    <h4><?php the_title(); ?></h4>
-                                </a>
-                            </div>
-                
-                        <?php } ?>
-                    </div>
-                    <?php
-                        }
-                    }
-
-                    $post = $orig_post;
-                    wp_reset_query();
-                    ?>
-            <!-- End of Related Posts -->
 
             <div class="posts-links col-md-12 col-lg-8 offset-lg-2">
 
@@ -178,12 +133,68 @@
         <?php endwhile;
       endif;?>
 
-
     </div>
+    <!-- End of Article full -->
+
+
 
     <!-- <div class="col-xs-12 col-md-4 sidebar">
     <?php get_sidebar(); ?>
     </div> -->
+
+
+
+    <!-- Related Posts -->
+    <div class="col-12">
+    <?php
+        $orig_post = $post;
+        global $post;
+        $tags = wp_get_post_tags($post->ID);
+
+        if ($tags) {
+            $tag_ids = array();
+            foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+            $args = array(
+                'tag__in' => $tag_ids,
+                'post__not_in' => array($post->ID),
+                'posts_per_page' => 4, // Number of related posts to display.
+                'caller_get_posts' => 1
+            );
+
+            $my_query = new wp_query( $args );
+
+            if( $my_query->have_posts() ) { // Show only if there are related posts
+    ?>
+
+        <h3 class="col-12">Související články</h3>
+        <div class="related-posts">
+
+            <?php
+                while( $my_query->have_posts() ) {
+                    $my_query->the_post();
+
+            ?>
+
+                <div class="related-post col-sm-6 col-lg-3">
+                    <a href="<?php the_permalink()?>">
+                        <?php the_post_thumbnail( 'medium-large' ); ?>
+                        <h4><?php the_title(); ?></h4>
+                    </a>
+                </div>
+
+            <?php } ?>
+
+        </div>
+        <?php
+            }
+        }
+
+        $post = $orig_post;
+        wp_reset_query();
+        ?>
+    </div>
+    <!-- End of Related Posts -->
+
 
   </div>
 

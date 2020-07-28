@@ -2,7 +2,7 @@
 
   <div class="row">
 
-    <div class="col-xs-12 col-md-10 contact-page article-full">
+    <div class="col-xs-12 col-md-10 contact-page page-full">
 
       <?php if ( have_posts() ) :
         while ( have_posts() ) : the_post(); ?>
