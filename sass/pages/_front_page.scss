@@ -103,21 +103,21 @@
           margin-left: 0;
           margin-right: 0;
           margin-bottom: 2rem;
-          transition: 0.3s;
+          @include transition($trans-out);
           // h1 {
           //     color: inherit;
-          //     @include transition(0.3s);
+          //     @include transition($trans-out);
           // }
           &:hover {
               margin-left: 1.5rem;
               margin-right: -1.5rem;
-              @include transition(0.2s);
+              @include transition($trans-in);
               // a {
               //     text-decoration: none !important;
               //     h1 {
               //         color: #005da8;
               //         text-decoration: none !important;
-              //         @include transition(0.2s);
+              //         @include transition($trans-in);
               //     }
               // }
           }
@@ -139,7 +139,7 @@
                   color: $light-grey-1;
               }
               a {
-                  color: $dark-grey-2;
+                  color: $dark-grey-1;
                   h1 {
                       font-size: $h3;
                       line-height: 3rem;

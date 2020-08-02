@@ -90,7 +90,7 @@
       border-radius: 3px;
       padding: 0.35rem 1rem;
       margin: 0.5rem 1rem 0.5rem 0;
-      @include transition (all 0.3s ease);
+      @include transition (all $trans-out ease);
       &:hover,
       &:focus {
           text-decoration: none;
@@ -99,7 +99,7 @@
         //   background-color: $dark-grey-1;
         //   color: white;
           border: 1px solid $dark-grey-1;
-          @include transition (all 0.2s ease);
+          @include transition (all $trans-in ease);
       }
     }
   }
@@ -263,10 +263,10 @@
       left: -18.5rem;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
-      @include transition(all 0.3s ease);
+      @include transition(all $trans-out ease);
       &:hover {
           left: 0;
-          @include transition(all 0.2s ease);
+          @include transition(all $trans-in ease);
       }
       .post-thumbnail,
       .post-link {
@@ -277,10 +277,10 @@
       right: -18.5rem;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
-      @include transition(all 0.3s ease);
+      @include transition(all $trans-out ease);
       &:hover {
           right: 0;
-          @include transition(all 0.2s ease);
+          @include transition(all $trans-in ease);
       }
       .post-thumbnail,
       .post-link {
@@ -298,6 +298,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 2rem;
     .related-post {
         margin-bottom: 1.5rem;
         img {
@@ -305,9 +306,19 @@
             width: 100%;
             object-fit: cover;
             border-radius: 4px;
+            @include transition($trans-out);
         }
         h4 {
             margin-top: 1rem;
+        }
+        @media (min-width: $screen-lg-min) {
+            &:hover {
+                img {
+                  margin-bottom: 0.5rem;
+                  margin-top: -0.5rem;
+                  @include transition($trans-in);
+                }
+            }
         }
     }
     .ccfic {
